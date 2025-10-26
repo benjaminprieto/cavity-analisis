@@ -1,0 +1,62 @@
+# 03_configs/analyses/09_cavity.yaml
+project_name: "nrp1_xylt1_allostery"
+
+run:
+  tag: "nrp1_xylt1"
+  verbose: true
+
+inputs:
+  # PDB renumerado (cadenas: A=NRP1, B=XYLT1, U=UDP)
+  pdb: "04_data/processed/nrp1_xylt1/01_align/NRP1_XYLT1_UDP_chainABU.pdb"
+  # Trayectoria (opcional para métricas que lo necesiten en helpers internos)
+  dcd: "04_data/raw/trajectories/NRP1_XYLT1_Lig_fullatoms.dcd"
+  chains:
+    nrp1: "A"
+    xylt1: "B"
+    udp:  "U"
+
+# Región de interés: cavidad (resids en la numeración del PDB renumerado)
+regions:
+  cavity:
+    name: "NRP1 putative allosteric cavity"
+    residues: [600, 601, 603, 604, 606, 610, 612, 615, 616, 620]   # <-- ajusta con tus resids
+  ser612:
+    residue: 612
+
+# Dónde están los outputs de los módulos 1–7
+previous_results:
+  network:
+    dir: "05_results/nrp1_xylt1/01_network"
+    graph_pkl: "network_graph.pkl"
+    ranking_csv: "centrality_ranking.csv"
+
+  energy:
+    dir: "05_results/nrp1_xylt1/02_energy"
+    inter_energy_csv: "inter_energy.csv"
+    binding_per_residue_csv: "binding_per_residue.csv"
+
+  dccm:
+    dir: "05_results/nrp1_xylt1/03_dccm"
+    dccm_npy: "dccm_full.npy"
+    high_corr_csv: "high_correlations.csv"
+
+  pca:
+    dir: "05_results/nrp1_xylt1/04_pca"
+    participation_csv: "residue_participation.csv"
+
+  pathways:
+    dir: "05_results/nrp1_xylt1/05_pathways"
+    pathways_json: "weighted_paths.json"
+    bottlenecks_csv: "bottleneck_residues.csv"
+
+  communities:
+    dir: "05_results/nrp1_xylt1/06_communities"
+    communities_json: "communities.json"   # { "assignments": {node:int -> comm:int}, ... }
+
+  integration:
+    dir: "05_results/nrp1_xylt1/07_integration"
+    critical_csv: "critical_residues_final.csv"
+
+# Carpeta base de salida de este módulo
+output:
+  base_dir: "05_results/nrp1_xylt1/09_cavity"

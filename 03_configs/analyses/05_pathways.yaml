@@ -1,0 +1,55 @@
+run:
+  tag: "nrp1_xylt1"
+  outroot_processed: "04_data/processed"
+  outroot_results:   "05_results"
+  verbose: true
+
+inputs:
+  # Estructura y trayectoria (por si se necesita inspeccionar interfaz en un frame representativo)
+  pdb: "04_data/processed/nrp1_xylt1/01_align/NRP1_XYLT1_UDP_chainABU.pdb"
+  dcd: "04_data/raw/trajectories/NRP1_XYLT1_Lig_fullatoms.dcd"
+  chains:
+    nrp1: "A"    # NRP1
+    xylt1: "B"    # XYLT1
+    udp:  "U"    # UDP
+
+# artefactos previos que usaremos:
+artifacts:
+  network_graph: "05_results/nrp1_xylt1/01_network/network_graph.pkl"   # del módulo 1
+  inter_energy:  "05_results/nrp1_xylt1/02_energy/inter_nrp1_xylt1.csv" # del módulo 2
+
+frames:
+  mode: "stride"     # "stride" | "range" | "list" (sólo se usa si necesitamos posiciones para interfaz)
+  stride: 50
+  start: 0
+  stop: 5000
+  list: []
+
+pathways:
+  # cómo ponderar aristas del grafo:
+  #  - "interaction_energy": usa |E_total| de inter_nrp1_xylt1 (peso de coste = 1/(|E|+0.1))
+  #  - "persistence": usa persistencia de contacto del grafo (peso de coste = 1/(persist+1e-6))
+  edge_weight: "interaction_energy"
+
+  # fuentes = top hubs del ranking de 01_network
+  n_source_residues: 50
+
+  # destinos = interfaz entre A y B detectada en el frame 0 (cutoff en Å)
+  targets:
+    type: "interface"
+    cutoff: 5.0
+
+  # búsqueda de rutas
+  n_paths_per_source: 5
+  max_path_length: 15
+
+  # bottlenecks = residuos que aparecen en muchos caminos
+  bottleneck_threshold: 0.30   # freq ≥ 30%
+
+  output:
+    pathways:    "weighted_paths.json"        # lista de rutas con residuos
+    bottlenecks: "bottleneck_residues.csv"    # tabla de bottlenecks
+    importance:  "pathway_importance.csv"     # score por cada path
+
+output:
+  base_dir: "05_results/nrp1_xylt1/05_pathways"

@@ -1,0 +1,44 @@
+run:
+  tag: "nrp1_xylt1"
+  outroot_processed: "04_data/processed"
+  outroot_results:   "05_results"
+  verbose: true
+
+inputs:
+  pdb: "04_data/processed/nrp1_xylt1/01_align/NRP1_XYLT1_UDP_chainABU.pdb"
+  dcd: "04_data/raw/trajectories/NRP1_XYLT1_Lig_fullatoms.dcd"
+  chains:
+    nrp1: "A"
+    xylt1: "B"
+    udp:  "U"
+
+frames:
+  mode: "stride"     # "stride" | "range" | "list"
+  stride: 10
+  start: 0
+  stop: null
+  list: []
+
+pca:
+  selection: "protein and name CA"   # rápido/robusto para modos globales
+  n_components: 10
+
+  region_participation:
+    enabled: false                   # pon a true si defines regiones abajo
+    regions: []                      # ["cavity", "interface", ...]
+
+  output:
+    components:           "components.npy"              # eigenvectores (shape: nPC, 3N)
+    variance_explained:   "variance_explained.csv"      # varianza y acumulada
+    participation:         "residue_participation.csv"  # aporte por residuo (normalizado 0–1)
+    projection:            "pc_projection.csv"          # trayectorias proyectadas (PC1..PCk + frame)
+
+# (Opcional) Define regiones si usas region_participation.enabled=true
+regions:
+  # cavity:
+  #   residues: [123, 124, 125]
+  # interface:
+  #   residues: [300, 301, 302]
+
+output:
+  base_dir: "05_results/nrp1_xylt1/04_pca"

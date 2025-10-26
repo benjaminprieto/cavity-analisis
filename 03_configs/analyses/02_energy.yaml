@@ -1,0 +1,49 @@
+run:
+  tag: "nrp1_xylt1"
+  outroot_processed: "04_data/processed"
+  outroot_results:   "05_results"
+  verbose: true
+
+inputs:
+  pdb: "04_data/processed/nrp1_xylt1/01_align/NRP1_XYLT1_UDP_chainABU.pdb"
+  dcd: "04_data/raw/trajectories/NRP1_XYLT1_Lig_fullatoms.dcd"
+  chains:
+    nrp1: "A"    # NRP1
+    xylt1: "B"    # XYLT1
+    udp:  "U"    # UDP
+
+frames:
+  mode: "stride"   # "stride" | "range" | "list"
+  stride: 10
+  start: 0
+  stop: null
+  list: []
+
+energy_decomposition:
+  # (1) Energía intra NRP1
+  intra_nrp1:
+    enabled: true
+    selection: "segid A and protein"  # puedes afinar (por ejemplo, "name CA" o backbone)
+    cutoff: 12.0
+
+  # (2) Energía intra XYLT1
+  intra_xylt1:
+    enabled: true
+    selection: "segid B and protein"
+    cutoff: 12.0
+
+  # (3) Energía inter NRP1 <-> XYLT1
+  inter_nrp1_xylt1:
+    enabled: true
+    selection1: "segid A and protein"
+    selection2: "segid B and protein"
+    cutoff: 12.0
+
+  output:
+    intra_nrp1_matrix:            "intra_nrp1_matrix.csv"
+    intra_xylt1_matrix:           "intra_xylt1_matrix.csv"
+    inter_energy:                 "inter_nrp1_xylt1.csv"
+    binding_energy_per_residue:   "binding_per_residue.csv"
+
+output:
+  base_dir: "05_results/nrp1_xylt1/02_energy"

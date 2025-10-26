@@ -1,0 +1,44 @@
+run:
+  tag: "nrp1_xylt1"                 # nombre del experimento/proyecto
+  outroot_processed: "04_data/processed"
+  outroot_results:   "05_results"
+  verbose: true
+
+inputs:
+  # PDB renumerado que ya tienes (con cadenas A=NRP1, B=XYLT1 y U=UDP)
+  pdb:  "04_data/processed/nrp1_xylt1/01_align/NRP1_XYLT1_UDP_chainABU.pdb"
+  # Trayectoria full átomos
+  dcd:  "04_data/raw/trajectories/NRP1_XYLT1_Lig_fullatoms.dcd"
+  chains:
+    nrp1: "A"          # NRP1
+    xylt1: "B"          # XYLT1
+    udp:  "U"          # UDP (ligando/cofactor)
+
+frames:
+  # Cómo seleccionar frames (usado por trajectory_utils.select_frames)
+  mode: "stride"        # "stride" | "range" | "list"
+  stride: 10            # cada 10 frames si mode=stride
+  start: 0              # inicio (incluido) si aplica
+  stop: null            # fin (excluido). null => hasta el final
+  list: []              # si mode=list, índices explícitos [0, 50, 100, ...]
+
+global_network:
+  # Qué átomos usar para la red (rápido y estándar: Cα de proteína)
+  selection: "protein and name CA"
+  contact_cutoff: 8.0           # Å (umbral de contacto)
+  min_persistence: 0.30         # 0–1; fracción mínima de frames con contacto
+  top_n_hubs: 50                # Top N por métrica
+  metrics:
+    - betweenness_centrality
+    - eigenvector_centrality
+    - closeness_centrality
+    - degree
+
+  output:
+    network_graph:       "network_graph.gpickle"
+    centrality_ranking:  "centrality_ranking.csv"
+    hub_residues:        "hub_residues.json"
+
+# Carpeta base donde se escribe este paso (PASO 01 de análisis)
+output:
+  base_dir: "05_results/nrp1_xylt1/01_network"

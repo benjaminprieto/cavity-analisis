@@ -1,0 +1,40 @@
+project_name: "nrp1_xylt1"
+
+run:
+  tag: "nrp1_xylt1"
+  outroot_results: "05_results"
+  verbose: true
+
+# Artefactos de módulos previos que la integración va a leer desde disco
+artifacts:
+  network_ranking:         "05_results/nrp1_xylt1/01_network/centrality_ranking.csv"
+  energy_binding_per_res:  "05_results/nrp1_xylt1/02_energy/binding_per_residue.csv"
+  dccm_high_correlations:  "05_results/nrp1_xylt1/03_dccm/high_correlations.csv"
+  pca_participation:       "05_results/nrp1_xylt1/04_pca/residue_participation.csv"
+  pathways_bottlenecks:    "05_results/nrp1_xylt1/05_pathways/bottleneck_residues.csv"
+
+integration:
+  # Pesos (se normalizan si no suman 1.0)
+  weights:
+    network:  0.30
+    energy:   0.25
+    dccm:     0.15
+    pca:      0.15
+    pathway:  0.15
+
+  # Umbral para definir “crítico”
+  min_critical_score: 0.6
+
+  # Chequeo de cavidad (opcional)
+  cavity_check:
+    enabled: true
+    cavity_residues: []     # Ejemplo: [480, 481, 482, 612]
+    threshold: 0.6          # Residuo con critical_score >= 0.6 se considera crítico
+
+  output:
+    critical_residues: "critical_residues_final.csv"
+    cavity_importance: "cavity_is_critical.json"
+    summary:           "summary_report.txt"
+
+output:
+  base_dir: "05_results/nrp1_xylt1/07_integration"

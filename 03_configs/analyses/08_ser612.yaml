@@ -1,0 +1,42 @@
+project_name: "nrp1_xylt1_ser612"
+
+run:
+  tag: "nrp1_xylt1"
+  verbose: true
+
+inputs:
+  pdb: "04_data/processed/nrp1_xylt1/01_align/NRP1_XYLT1_UDP_chainABU.pdb"
+  dcd: "04_data/raw/trajectories/NRP1_XYLT1_Lig_fullatoms.dcd"
+  chains:
+    nrp1: "A"   # NRP1
+    xylt1: "B"  # XYLT1
+    udp:  "U"   # UDP
+
+frames:
+  mode: "stride"   # "stride" | "range" | "list"
+  stride: 10
+  start: 0
+  stop: null
+  list: []
+
+ser612_analysis:
+  enabled: true
+
+  distance_to_catalytic:
+    # Ser612 en NRP1 (cadena A). Puedes afinar la selección si quieres otro átomo representativo.
+    ser612_selection: "segid A and resid 612 and (name OG or name CB or name CA)"
+    # Centro catalítico en XYLT1 (cadena B): Glu529 (cualquier átomo ácido/carboxilo razonable)
+    glu529_selection: "segid B and resid 529 and (name OE1 or name OE2 or name CD or name CG)"
+    optimal_range: [3.0, 8.0]   # ventana “óptima” distancia (Å)
+
+  sasa:
+    enabled: true
+    min_accessible: 15.0        # umbral SASA (Å^2) para “accesible”
+
+  output:
+    distance_timeseries:   "tables/8_ser612_distance.csv"
+    sasa_timeseries:       "tables/8_ser612_sasa.csv"
+    accessibility_score:   "tables/8_ser612_accessibility.json"
+
+output:
+  base_dir: "05_results/nrp1_xylt1/08_ser612"

@@ -1,0 +1,39 @@
+run:
+  tag: "nrp1_xylt1"
+  outroot_processed: "04_data/processed"
+  outroot_results:   "05_results"
+  verbose: true
+
+inputs:
+  pdb: "04_data/processed/nrp1_xylt1/01_align/NRP1_XYLT1_UDP_chainABU.pdb"
+  dcd: "04_data/raw/trajectories/NRP1_XYLT1_Lig_fullatoms.dcd"
+  chains:
+    nrp1: "A"    # NRP1
+    xylt1: "B"    # XYLT1
+    udp:  "U"    # UDP
+
+frames:
+  mode: "stride"     # "stride" | "range" | "list"
+  stride: 10
+  start: 0
+  stop: null
+  list: []
+
+dccm:
+  # selección típica: Cα de proteína (rápido/estable)
+  selection: "protein and name CA"
+
+  # extraer submatriz cruzada A↔B
+  cross_protein:
+    enabled: true     # si quieres también la matriz cruzada entre A (NRP1) y B (XYLT1)
+
+  thresholds:
+    significant_correlation: 0.5   # |r| >= 0.5
+
+  output:
+    dccm_full:   "dccm_matrix.npy"          # matriz NxN (float64) con correlaciones
+    dccm_cross:  "dccm_cross_AB.csv"        # pares A↔B con r
+    high_correlations: "dccm_high_pairs.csv" # pares con |r|>=umbral
+
+output:
+  base_dir: "05_results/nrp1_xylt1/03_dccm"

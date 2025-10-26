@@ -1,30 +1,248 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0703395-b92c-4225-88e3-1384613a7b14" name="Changes" comment="" />
+    <list default="true" id="f0703395-b92c-4225-88e3-1384613a7b14" name="Changes" comment="Environment">
+      <change beforePath="$PROJECT_DIR$/.idea/cavity-analisis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cavity-analisis.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_src/cavity_analysis/core/cavity.py" beforeDir="false" afterPath="$PROJECT_DIR$/01_src/cavity_analysis/core/cavity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_src/cavity_analysis/core/communities.py" beforeDir="false" afterPath="$PROJECT_DIR$/01_src/cavity_analysis/core/communities.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_src/cavity_analysis/core/dccm.py" beforeDir="false" afterPath="$PROJECT_DIR$/01_src/cavity_analysis/core/dccm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_src/cavity_analysis/core/energy.py" beforeDir="false" afterPath="$PROJECT_DIR$/01_src/cavity_analysis/core/energy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_src/cavity_analysis/core/integration.py" beforeDir="false" afterPath="$PROJECT_DIR$/01_src/cavity_analysis/core/integration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_src/cavity_analysis/core/network.py" beforeDir="false" afterPath="$PROJECT_DIR$/01_src/cavity_analysis/core/network.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_src/cavity_analysis/core/pathways.py" beforeDir="false" afterPath="$PROJECT_DIR$/01_src/cavity_analysis/core/pathways.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_src/cavity_analysis/core/pathways_optimized.py" beforeDir="false" afterPath="$PROJECT_DIR$/01_src/cavity_analysis/core/pathways_optimized.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_src/cavity_analysis/core/pca.py" beforeDir="false" afterPath="$PROJECT_DIR$/01_src/cavity_analysis/core/pca.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_src/cavity_analysis/core/ser612.py" beforeDir="false" afterPath="$PROJECT_DIR$/01_src/cavity_analysis/core/ser612.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_scripts/01_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_scripts/01_network.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_scripts/02_energy.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_scripts/02_energy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_scripts/03_dccm.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_scripts/03_dccm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_scripts/04_pca.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_scripts/04_pca.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_scripts/05_pathways.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_scripts/05_pathways.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_scripts/05a_pathways.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_scripts/05a_pathways.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_scripts/06_communities.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_scripts/06_communities.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_scripts/07_integration.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_scripts/07_integration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_scripts/08_ser612.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_scripts/08_ser612.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_scripts/09_cavity.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_scripts/09_cavity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_configs/analyses/01_network.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/03_configs/analyses/01_network.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_configs/analyses/02_energy.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/03_configs/analyses/02_energy.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_configs/analyses/03_dccm.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/03_configs/analyses/03_dccm.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_configs/analyses/04_pca.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/03_configs/analyses/04_pca.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_configs/analyses/05_pathways.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/03_configs/analyses/05_pathways.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_configs/analyses/05a_pathways.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/03_configs/analyses/05a_pathways.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_configs/analyses/06_communities.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/03_configs/analyses/06_communities.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_configs/analyses/07_integration.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/03_configs/analyses/07_integration.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_configs/analyses/08_ser612.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/03_configs/analyses/08_ser612.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_configs/analyses/09_cavity.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/03_configs/analyses/09_cavity.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_data/raw/fasta/NRP1.fasta" beforeDir="false" afterPath="$PROJECT_DIR$/04_data/raw/fasta/NRP1.fasta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_data/raw/fasta/XYLT1.fasta" beforeDir="false" afterPath="$PROJECT_DIR$/04_data/raw/fasta/XYLT1.fasta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/08_tests/01_network_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/08_tests/01_network_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/08_tests/02_energy_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/08_tests/02_energy_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/08_tests/03_dccm_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/08_tests/03_dccm_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/08_tests/04_pca_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/08_tests/04_pca_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/08_tests/05_pathways_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/08_tests/05_pathways_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/08_tests/06_communities_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/08_tests/06_communities_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/08_tests/07_integration_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/08_tests/07_integration_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/08_tests/08_ser612_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/08_tests/08_ser612_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/08_tests/09_cavity_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/08_tests/09_cavity_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/README.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "benjaminprieto"
+  }
 }]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/benjaminprieto/cavity-analisis.git",
+    "accountId": "2433f814-032a-47dd-a3a2-d19c4fe11d05"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="349jgUZvhF980N7Tg62KToHw5GA" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.01_align_and_renumber.executor": "Run",
+    "Python.01_diagnose_structure.executor": "Run",
+    "Python.01_network_test.executor": "Run",
+    "Python.02_identify_and_separate_proteins.executor": "Run",
+    "Python.setup_project.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/benja/PycharmProjects/cavity-analisis",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\benja\PycharmProjects\cavity-analisis\01_src\cavity_analysis\core" />
+      <recent name="C:\Users\benja\PycharmProjects\cavity-analisis\data\raw" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.01_network_test">
+    <configuration name="01_align_and_renumber" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="cavity-analisis" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/01_align_and_renumber.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="01_diagnose_structure" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="cavity-analisis" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/01_diagnose_structure.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="01_network_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="cavity-analisis" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/08_tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/08_tests/01_network_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="02_identify_and_separate_proteins" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="cavity-analisis" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/02_identify_and_separate_proteins.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="setup_project" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="cavity-analisis" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/setup_project.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.01_network_test" />
+        <item itemvalue="Python.01_align_and_renumber" />
+        <item itemvalue="Python.02_identify_and_separate_proteins" />
+        <item itemvalue="Python.01_diagnose_structure" />
+        <item itemvalue="Python.setup_project" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -33,6 +251,7 @@
       </set>
     </attachedChunks>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="f0703395-b92c-4225-88e3-1384613a7b14" name="Changes" comment="" />
@@ -40,11 +259,39 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1760632792906</updated>
-      <workItem from="1760632793961" duration="81000" />
+      <workItem from="1760632793961" duration="2387000" />
+      <workItem from="1760635215255" duration="1127000" />
+      <workItem from="1760636366736" duration="483000" />
+      <workItem from="1760636862250" duration="34937000" />
+      <workItem from="1760904137424" duration="30641000" />
+      <workItem from="1761005618663" duration="13441000" />
+      <workItem from="1761087109152" duration="8258000" />
+      <workItem from="1761173492740" duration="6816000" />
+      <workItem from="1761492376787" duration="3019000" />
     </task>
+    <task id="LOCAL-00001" summary="Environment">
+      <option name="closed" value="true" />
+      <created>1761495394531</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1761495394531</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Environment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Environment" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/cavity_analisis$01_diagnose_structure.coverage" NAME="01_diagnose_structure Coverage Results" MODIFIED="1760819730946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
+    <SUITE FILE_PATH="coverage/cavity_analisis$01_align_and_renumber.coverage" NAME="01_align_and_renumber Coverage Results" MODIFIED="1760824700749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
+    <SUITE FILE_PATH="coverage/setup_py$01_network_test.coverage" NAME="01_network_test Coverage Results" MODIFIED="1760918784470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/08_tests" />
+    <SUITE FILE_PATH="coverage/cavity_analisis$setup_project.coverage" NAME="setup_project Coverage Results" MODIFIED="1760633749509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cavity_analisis$02_identify_and_separate_proteins.coverage" NAME="02_identify_and_separate_proteins Coverage Results" MODIFIED="1760820635997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
   </component>
 </project>

@@ -1,0 +1,68 @@
+# 03_configs/analyses/05a_pathways.yaml
+# Configuration for optimized pathway analysis (Module 5a)
+
+run:
+  tag: "nrp1_xylt1"
+  outroot_processed: "04_data/processed"
+  outroot_results:   "05_results"
+  verbose: true
+
+inputs:
+  # Structure and trajectory files
+  pdb: "04_data/processed/nrp1_xylt1/01_align/NRP1_XYLT1_UDP_chainABU.pdb"
+  dcd: "04_data/raw/trajectories/NRP1_XYLT1_Lig_fullatoms.dcd"
+
+  # Chain identifiers
+  chains:
+    nrp1: "A"    # NRP1 protein
+    xylt1: "B"   # XYLT1 protein
+    udp:  "U"    # UDP ligand
+
+# Artifacts from previous modules
+artifacts:
+  network_graph: "05_results/nrp1_xylt1/01_network/network_graph.pkl"    # From Module 1
+  inter_energy:  "05_results/nrp1_xylt1/02_energy/inter_nrp1_xylt1.csv"  # From Module 2
+
+# Frame selection (only used for interface detection)
+frames:
+  mode: "stride"    # Options: "stride" | "range" | "list"
+  stride: 50
+  start: 0
+  stop: 5000
+  list: []          # Use this if mode is "list"
+
+pathways:
+  # Edge weighting strategy:
+  #  - "interaction_energy": uses |E_total| from energy CSV (Module 2)
+  #                         Lower energy = stronger interaction = lower cost
+  #  - "persistence": uses contact persistence from network graph (Module 1)
+  #                  Higher persistence = more stable = lower cost
+  edge_weight: "interaction_energy"
+
+  # Source nodes: top hubs from centrality ranking
+  n_source_residues: 50
+
+  # Target nodes: interface residues between chains A and B
+  targets:
+    type: "interface"   # Currently only "interface" is implemented
+    cutoff: 5.0         # Distance cutoff in Angstroms
+
+  # Path search parameters
+  n_paths_per_source: 5    # Maximum alternative paths per source-target pair
+  max_path_length: 15      # Maximum path length (number of nodes)
+
+  # Performance: save progress incrementally
+  save_checkpoint_every: 100   # Save checkpoint every N pairs processed
+
+  # Bottleneck detection: residues appearing in ≥ threshold of all paths
+  bottleneck_threshold: 0.30   # 30% = residue must appear in ≥30% of paths
+
+  # Output filenames
+  output:
+    pathways:    "weighted_paths.json"         # Full path information
+    bottlenecks: "bottleneck_residues.csv"     # Bottleneck residues ranked by frequency
+    importance:  "pathway_importance.csv"      # All paths ranked by score
+
+# Output directory
+output:
+  base_dir: "05_results/nrp1_xylt1/05a_pathways"
